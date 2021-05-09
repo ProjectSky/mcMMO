@@ -502,6 +502,7 @@ public class MaterialMapStore {
         axes.add("golden_axe");
         axes.add("diamond_axe");
         axes.add("netherite_axe");
+        axes.add("ironwood_axe");
     }
 
     private void fillPickAxes() {

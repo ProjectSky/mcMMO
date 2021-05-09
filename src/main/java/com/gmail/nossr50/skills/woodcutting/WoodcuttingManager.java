@@ -208,7 +208,12 @@ public class WoodcuttingManager extends SkillManager {
      * @return True if the tool can sustain the durability loss
      */
     private static boolean handleDurabilityLoss(@NotNull Set<BlockState> treeFellerBlocks, @NotNull ItemStack inHand, @NotNull Player player) {
-        //Treat the NBT tag for unbreakable and the durability enchant differently
+    	if (mcMMO.getModManager().isCustomAxe(player.getInventory().getItemInMainHand().getType()))
+    	{
+    		return true;
+    	}
+    	
+    	//Treat the NBT tag for unbreakable and the durability enchant differently
         ItemMeta meta = inHand.getItemMeta();
 
         if (meta != null && meta.isUnbreakable()) {

@@ -61,13 +61,11 @@ public class CustomBlockConfig extends ConfigLoader {
                 needsUpdate = true;
                 return;
             }
-
-            String[] blockInfo = blockName.split("[|]");
-
-            Material blockMaterial = Material.matchMaterial(blockInfo[0]);
+     
+            Material blockMaterial = Material.matchMaterial(blockName);
 
             if (blockMaterial == null) {
-                mcMMO.p.getLogger().warning("Invalid material name. This item will be skipped. - " + blockInfo[0]);
+                mcMMO.p.getLogger().warning("Invalid material name. This item will be skipped. - " + blockName);
                 continue;
             }
 

@@ -218,8 +218,8 @@ public class mcMMO extends JavaPlugin {
             if (!noErrorsInConfigFiles) {
                 return;
             }
-
-            if (getServer().getName().equals("Cauldron") || getServer().getName().equals("MCPC+")) {
+            
+            if (getServer().getName().equals("Cauldron") || getServer().getName().equals("LoliServer")) {
                 checkModConfigs();
             }
 

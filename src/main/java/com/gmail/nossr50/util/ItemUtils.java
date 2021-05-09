@@ -134,7 +134,7 @@ public final class ItemUtils {
      * @return true if the item is a sword, false otherwise
      */
     public static boolean isSword(@NotNull ItemStack item) {
-        return mcMMO.getMaterialMapStore().isSword(item.getType().getKey().getKey());
+        return mcMMO.getMaterialMapStore().isSword(item.getType().getKey().getKey()) || mcMMO.getModManager().isCustomSword(item.getType());
     }
 
     /**
@@ -144,7 +144,7 @@ public final class ItemUtils {
      * @return true if the item is a hoe, false otherwise
      */
     public static boolean isHoe(@NotNull ItemStack item) {
-        return mcMMO.getMaterialMapStore().isHoe(item.getType().getKey().getKey());
+        return mcMMO.getMaterialMapStore().isHoe(item.getType().getKey().getKey()) || mcMMO.getModManager().isCustomHoe(item.getType());
     }
 
     /**
@@ -154,7 +154,7 @@ public final class ItemUtils {
      * @return true if the item is a shovel, false otherwise
      */
     public static boolean isShovel(@NotNull ItemStack item) {
-        return mcMMO.getMaterialMapStore().isShovel(item.getType().getKey().getKey());
+        return mcMMO.getMaterialMapStore().isShovel(item.getType().getKey().getKey()) || mcMMO.getModManager().isCustomShovel(item.getType());
     }
 
     /**
@@ -164,7 +164,7 @@ public final class ItemUtils {
      * @return true if the item is an axe, false otherwise
      */
     public static boolean isAxe(@NotNull ItemStack item) {
-        return mcMMO.getMaterialMapStore().isAxe(item.getType().getKey().getKey());
+        return mcMMO.getMaterialMapStore().isAxe(item.getType().getKey().getKey()) || mcMMO.getModManager().isCustomAxe(item.getType());
     }
 
     /**
@@ -174,7 +174,7 @@ public final class ItemUtils {
      * @return true if the item is a pickaxe, false otherwise
      */
     public static boolean isPickaxe(@NotNull ItemStack item) {
-        return mcMMO.getMaterialMapStore().isPickAxe(item.getType().getKey().getKey());
+        return mcMMO.getMaterialMapStore().isPickAxe(item.getType().getKey().getKey()) || mcMMO.getModManager().isCustomPickaxe(item.getType());
     }
 
     /**
@@ -198,7 +198,7 @@ public final class ItemUtils {
      * @return true if the item is armor, false otherwise
      */
     public static boolean isArmor(ItemStack item) {
-        return mcMMO.getMaterialMapStore().isArmor(item.getType());
+        return mcMMO.getMaterialMapStore().isArmor(item.getType()) || mcMMO.getModManager().isCustomArmor(item.getType());
     }
 
     /**
@@ -207,6 +207,7 @@ public final class ItemUtils {
      * @param item Item to check
      * @return true if the item is leather armor, false otherwise
      */
+    // isCustomBoots(material) || isCustomChestplate(material) || isCustomHelmet(material) || isCustomLeggings(material);
     public static boolean isLeatherArmor(ItemStack item) {
         return mcMMO.getMaterialMapStore().isLeatherArmor(item.getType());
     }

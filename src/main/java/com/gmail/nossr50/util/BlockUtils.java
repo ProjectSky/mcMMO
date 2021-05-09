@@ -172,7 +172,7 @@ public final class BlockUtils {
      * @return true if the block is a log, false otherwise
      */
     public static boolean hasWoodcuttingXP(BlockState blockState) {
-        return ExperienceConfig.getInstance().doesBlockGiveSkillXP(PrimarySkillType.WOODCUTTING, blockState.getBlockData());
+        return ExperienceConfig.getInstance().doesBlockGiveSkillXP(PrimarySkillType.WOODCUTTING, blockState.getBlockData()) || mcMMO.getModManager().isCustomLog(blockState);
     }
 
     /**

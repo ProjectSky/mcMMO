@@ -86,6 +86,10 @@ public class ModManager {
         customToolMap.putAll(config.customToolMap);
         repairables.addAll(config.repairables);
     }
+    
+    public boolean isCustomArmor(Material material) {
+    	return isCustomBoots(material) || isCustomChestplate(material) || isCustomHelmet(material) || isCustomLeggings(material);
+    }
 
     public boolean isCustomBoots(Material material) {
         return mcMMO.p.getGeneralConfig().getArmorModsEnabled() && customBoots.contains(material);
